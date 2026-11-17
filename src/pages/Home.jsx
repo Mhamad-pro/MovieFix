@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom'
 import MovieList from '../components/MovieList.jsx'
 
-function Home({ movies, favorites, toggleFavorite, setPage }) {
+// Shows the welcome message, featured movie, and popular movies.
+function Home({ movies, favorites, toggleFavorite }) {
   return (
     <>
       <section className="hero">
         <p className="eyebrow">YOUR NEXT FAVORITE FILM</p>
         <h1>Welcome to MovieFlix</h1>
         <p>Discover a great story for your next movie night and keep your favorites close.</p>
-        <button className="primary-button" type="button" onClick={() => setPage('Movies')}>
+        <Link className="primary-button" to="/movies">
           View all movies <span aria-hidden="true">→</span>
-        </button>
+        </Link>
       </section>
 
       <MovieList title="Featured movie" movies={movies.slice(0, 1)} favorites={favorites} toggleFavorite={toggleFavorite} />

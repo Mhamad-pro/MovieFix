@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
@@ -8,8 +9,8 @@ import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import movies from './data/movies.js'
 
+// Main component: remembers favorite movies and shows the page that matches the URL.
 function App() {
-  const [page, setPage] = useState('Home')
   const [favorites, setFavorites] = useState([])
 
   // Adds a movie to favorites or removes it if already saved.
@@ -21,29 +22,21 @@ function App() {
     }
   }
 
-  function showPage() {
-    if (page === 'Movies') {
-      return <Movies movies={movies} favorites={favorites} toggleFavorite={toggleFavorite} />
-    }
-
-    if (page === 'Favorites') {
-      const savedMovies = movies.filter((movie) => favorites.includes(movie.id))
-      return <Favourites movies={savedMovies} favorites={favorites} toggleFavorite={toggleFavorite} />
-    }
-
-    if (page === 'About') return <About />
-    if (page === 'Contact') return <Contact />
-
-    return (
-      <Home movies={movies} favorites={favorites} toggleFavorite={toggleFavorite} setPage={setPage} />
-    )
-  }
+  const savedMovies = movies.filter((movie) => favorites.includes(movie.id))
 
   return (
     <div className="app-shell">
-      <Navbar activePage={page} onNavigate={setPage} />
-      <main className="main-content" aria-live="polite">{showPage()}</main>
-      <Footer onNavigate={setPage} />
+      <Navbar />
+      <main className="main-content" aria-live="polite">
+        <Routes>
+          <Route path="/" element={<Home movies={movies} favorites={favorites} toggleFavorite={toggleFavorite} />} />
+          <Route path="/movies" element={<Movies movies={movies} favorites={favorites} toggleFavorite={toggleFavorite} />} />
+          <Route path="/favorites" element={<Favourites movies={savedMovies} favorites={favorites} toggleFavorite={toggleFavorite} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   )
 }

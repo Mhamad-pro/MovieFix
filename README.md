@@ -1,16 +1,52 @@
-# React + Vite
+# MovieFlix — Simple React Version
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An easier-to-read version of the original MovieFlix React website. The same pages and styling are included, along with movie search, genre filtering, movie details, favorites, and a demo contact form.
 
-Currently, two official plugins are available:
+**The code uses simple `if` statements instead of `switch` or `case`, and each named function/component has one short comment.** Pages are switched with React Router, so each page has its own address (for example `/movies`). It does not use a database or other complex libraries.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How to run
 
-## React Compiler
+1. Open the `MovieFlx` folder (the one containing `package.json`) in VS Code.
+2. Open a terminal in that folder.
+3. Run:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Open the localhost address shown in the terminal.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Where the important code is
+
+- `src/main.jsx` — wraps the app in `BrowserRouter`.
+- `src/App.jsx` — remembers favorites; maps each URL to a page with `<Routes>` and `<Route>`.
+- `src/pages/Home.jsx` — welcome banner and featured/popular movies.
+- `src/pages/Movies.jsx` — movie search and genre filter.
+- `src/pages/Favourites.jsx` — favorite movies.
+- `src/pages/Contact.jsx` — example contact form (does not send a real email).
+- `src/pages/About.jsx` — about page.
+- `src/components/Navbar.jsx` — navigation bar.
+- `src/components/Footer.jsx` — footer.
+- `src/components/MovieList.jsx` — movie cards, empty message, and selected movie details.
+- `src/components/MovieCard.jsx` — one movie card and its buttons.
+- `src/data/movies.js` — the movie data.
+- `src/data/navigation.js` — page names and their URL paths.
+- `src/*.css` — original dark/red website styling.
+
+## Changes from the original
+
+- Navigation uses React Router: `/`, `/movies`, `/favorites`, `/about`, `/contact`.
+- Comments are above functions, rather than on nearly every line.
+- Removed extra display components and kept movie cards/details inside just `MovieCard` and `MovieList`.
+- Simplified names and removed excessive code comments.
+- The website design and main features are kept.
+
+**Note:** Favorite selections disappear after refreshing the webpage, just as in the original. The movie images are real posters loaded from TMDB (themoviedb.org). The contact form is only a demo, so submitting it does not send a real message.
+
+## Optional checks
+
+```bash
+npm run lint
+npm run build
+```

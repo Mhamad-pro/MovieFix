@@ -1,7 +1,7 @@
-const stockPhoto = (id) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=700&h=1050&q=80`
+/** Builds the address of a real movie poster on TMDB (themoviedb.org). */
+const poster = (file) => `https://image.tmdb.org/t/p/w500/${file}`
 
-
+// Sample movie catalog used by Home, Movies, and Favorites.
 const movies = [
   {
     id: 1,
@@ -9,7 +9,7 @@ const movies = [
     year: 2021,
     genre: 'Action',
     rating: 8.2,
-    poster: stockPhoto('photo-1500534314209-a25ddb2bd429'),
+    poster: poster('1g0dhYtq4irTY1GPXvft6k4YLjm.jpg'),
     description: 'Peter Parker asks for help after his identity becomes public, but the solution brings new dangers.',
   },
   {
@@ -18,7 +18,7 @@ const movies = [
     year: 2023,
     genre: 'Action',
     rating: 5.8,
-    poster: stockPhoto('photo-1503376780353-7e6692767b70'),
+    poster: poster('fiVW06jE7z9YnO4trhaMEdclSiC.jpg'),
     description: 'Dom and his crew face an enemy tied to their past in a high-speed global chase.',
   },
   {
@@ -27,7 +27,7 @@ const movies = [
     year: 2019,
     genre: 'Action',
     rating: 8.4,
-    poster: stockPhoto('photo-1489599849927-2ee91cede3ba'),
+    poster: poster('or06FN3Dka5tukK1e9sl16pB3iy.jpg'),
     description: 'The remaining Avengers attempt one last plan to reverse a devastating loss.',
   },
   {
@@ -36,7 +36,7 @@ const movies = [
     year: 2008,
     genre: 'Crime',
     rating: 9.0,
-    poster: stockPhoto('photo-1519608487953-e999c86e7455'),
+    poster: poster('qJ2tW6WMUDux911r6m7haRef0WH.jpg'),
     description: 'Batman faces a criminal mastermind whose escalating attacks threaten Gotham City.',
   },
   {
@@ -45,7 +45,7 @@ const movies = [
     year: 2010,
     genre: 'Sci-Fi',
     rating: 8.8,
-    poster: stockPhoto('photo-1478720568477-152d9b164e26'),
+    poster: poster('oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg'),
     description: 'A specialist assembles a team for a mission inside the dreams of a powerful target.',
   },
   {
@@ -54,7 +54,7 @@ const movies = [
     year: 2014,
     genre: 'Sci-Fi',
     rating: 8.7,
-    poster: stockPhoto('photo-1470770841072-f978cf4d019e'),
+    poster: poster('gEU2QniE6E77NI6lCU6MxlNBvIx.jpg'),
     description: 'A team of explorers travels beyond Earth in search of a future for humanity.',
   },
   {
@@ -63,7 +63,7 @@ const movies = [
     year: 1993,
     genre: 'Adventure',
     rating: 8.2,
-    poster: stockPhoto('photo-1511497584788-876760111969'),
+    poster: poster('oU7Oq2kFAAlGqbU4VoAE36g4hoI.jpg'),
     description: 'A visit to a dinosaur theme park turns dangerous when its security systems fail.',
   },
   {
@@ -72,7 +72,7 @@ const movies = [
     year: 1997,
     genre: 'Romance',
     rating: 7.9,
-    poster: stockPhoto('photo-1500375592092-40eb2168fd21'),
+    poster: poster('9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg'),
     description: 'Two passengers from different worlds form a bond during the ship’s ill-fated voyage.',
   },
   {
@@ -81,7 +81,7 @@ const movies = [
     year: 1999,
     genre: 'Sci-Fi',
     rating: 8.7,
-    poster: stockPhoto('photo-1485846234645-a62644f84728'),
+    poster: poster('f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg'),
     description: 'A computer programmer discovers that the world around him is not what it seems.',
   },
   {
@@ -90,7 +90,7 @@ const movies = [
     year: 1994,
     genre: 'Animation',
     rating: 8.5,
-    poster: stockPhoto('photo-1500530855697-b586d89ba3ee'),
+    poster: poster('sKCr78MXSLixwmZ8DyJLrpMsd15.jpg'),
     description: 'A young lion finds the courage to reclaim his place and protect his home.',
   },
   {
@@ -99,7 +99,7 @@ const movies = [
     year: 2024,
     genre: 'Sci-Fi',
     rating: 8.5,
-    poster: stockPhoto('photo-1509316785289-025f5b846b35'),
+    poster: poster('1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg'),
     description: 'Paul joins the Fremen on Arrakis as conflict over the desert planet intensifies.',
   },
   {
@@ -108,7 +108,7 @@ const movies = [
     year: 2023,
     genre: 'Action',
     rating: 7.6,
-    poster: stockPhoto('photo-1500534623283-312aade485b7'),
+    poster: poster('NNxYkU70HPurnNCSiCjYAmacwm.jpg'),
     description: 'Ethan Hunt races to stop a powerful artificial intelligence from falling into the wrong hands.',
   },
 ]

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import MovieCard from './MovieCard.jsx'
 
-
+// Displays movie cards and opens a movie's details when clicked.
 function MovieList({
   title,
   movies,
@@ -23,7 +23,7 @@ function MovieList({
 
       {selectedMovie && (
         <article className="movie-detail-view">
-          <img className="movie-poster" src={selectedMovie.poster} alt={`Genre-themed photo for ${selectedMovie.title}`} />
+          <img className="movie-poster" src={selectedMovie.poster} alt={`${selectedMovie.title} poster`} />
           <div className="movie-detail-content">
             <button className="details-button" type="button" onClick={() => setSelectedMovie(null)}>
               ← Back to movies
